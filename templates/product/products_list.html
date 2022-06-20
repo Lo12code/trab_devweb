@@ -7,7 +7,12 @@
 {% block content %}
     {% for prod in products %}
     <a>
-        {{prod.name}}
+        <p>
+            <form method="post" action="{% url 'ecommerce:prod_detail' name=prod.name %}">
+            {{ prod.name }} - Preço: {{ prod.price }}
+            <button class="btn btn-danger" type="submit">Detalhes do produto</button>
+            </form>
+        </p>
     </a>
     {% endfor %}
 {% endblock %}

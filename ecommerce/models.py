@@ -7,9 +7,8 @@ class Product(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField()
     quantity = models.IntegerField()
+    price = models.CharField(max_length=200, default='00,00')
 
-class User(models.Model):
-    name = models.CharField(max_length=200)
 
 class Cart(models.Model):
 
@@ -17,3 +16,5 @@ class Cart(models.Model):
         User,
         on_delete=models.CASCADE
     )
+
+    products = models.ManyToManyField(Product)

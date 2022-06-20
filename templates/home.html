@@ -4,10 +4,13 @@
 {% block title %}Loja Python{% endblock %}
 
 {% block content %}
-    <h2>Produtos</h2>
-    <p>produtos</p>
+    <h2>Produtos:</h2>
     <form method="post" action="{% url 'ecommerce:prod_list' %}">
-        {% csrf_token %}
         <button class="btn btn-danger" type="submit">Produtos</button>
+    </form>
+
+    <h2>Carrinho:</h2>
+    <form method="post" action="{% url 'ecommerce:cart_detail' %}">
+        <button class="btn btn-danger" type="submit">Carrinho</button>
     </form>
 {% endblock %}
