@@ -1,6 +1,13 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from ecommerce.models import Product
 
 # Create your views here.
-def index(request):
-    return HttpResponse("Teste")
+
+def product_list(request, category_slug=None):
+    category = None
+    products = Product.objects.all()
+
+    context = {
+        'products': products
+    }
+    return render(request, 'product/products_list.html', context)

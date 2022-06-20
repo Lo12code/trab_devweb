@@ -1,0 +1,13 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Loja Python{% endblock %}
+
+{% block content %}
+    <h2>Produtos</h2>
+    <p>produtos</p>
+    <form method="post" action="{% url 'ecommerce:prod_list' %}">
+        {% csrf_token %}
+        <button class="btn btn-danger" type="submit">Produtos</button>
+    </form>
+{% endblock %}

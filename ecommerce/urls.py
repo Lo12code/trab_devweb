@@ -1,7 +1,9 @@
 from django.urls import path
-from . import views
+from ecommerce.views import product_list
+
+app_name = 'ecommerce'
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('product/list', product_list, name='prod_list'),
 ]
 
